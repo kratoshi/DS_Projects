@@ -51,3 +51,8 @@ max_percentage = ((more_than_50k_count_per_country / total_per_country) * 100).m
 print(max_percentage)
 max_percentage_country = ((more_than_50k_count_per_country / total_per_country) * 100).idxmax()
 print(max_percentage_country)
+
+# most popular occupation among those earning more than 50K in India
+earning_more_than_50K_india = data[(data["Salary"] == ">50K") & (data["Native-Country"] == "India")]
+most_popular_occupation = (earning_more_than_50K_india["Occupation"]).value_counts().idxmax()
+print(most_popular_occupation)
