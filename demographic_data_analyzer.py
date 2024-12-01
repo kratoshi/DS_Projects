@@ -31,6 +31,15 @@ percentage_advanced_degree = (advanced_educated["Salary"] == ">50K").mean() * 10
 print(percentage_advanced_degree)
 
 # percentage of people without advanced education that earn more than 50K
-nonadvanced_educated = data[~data["Education"].isin(advanced_degree)]
+nonadvanced_educated = data[-data["Education"].isin(advanced_degree)]
 percentage_nonadvanced_educated = (nonadvanced_educated["Salary"] == ">50K").mean() * 100
 print(percentage_nonadvanced_educated)
+
+# minimum number of hours a person works per week
+min_work_hour = data["Hours-per-week"].min()
+print(min_work_hour)
+
+# percentage of min hours worker earning more than 50K
+min_hours_worker = data[data["Hours-per-week"] == min_work_hour]
+percentage_of_min_worker = (min_hours_worker["Salary"] == ">50K").mean() * 100
+print(percentage_of_min_worker)
