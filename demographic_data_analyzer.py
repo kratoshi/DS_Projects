@@ -43,3 +43,11 @@ print(min_work_hour)
 min_hours_worker = data[data["Hours-per-week"] == min_work_hour]
 percentage_of_min_worker = (min_hours_worker["Salary"] == ">50K").mean() * 100
 print(percentage_of_min_worker)
+
+# country with the highest percentage of people earning more than 50K
+more_than_50k_count_per_country = data[data["Salary"] == ">50K"]["Native-Country"].value_counts()
+total_per_country = data["Native-Country"].value_counts()
+max_percentage = ((more_than_50k_count_per_country / total_per_country) * 100).max()
+print(max_percentage)
+max_percentage_country = ((more_than_50k_count_per_country / total_per_country) * 100).idxmax()
+print(max_percentage_country)
