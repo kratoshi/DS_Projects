@@ -8,3 +8,4 @@ file_path = "/home/kratoshi/DataThings/DS_Projects/data_sets/medical_examination
 df = pd.read_csv(file_path, skipinitialspace=True)
 
 print(df.head())
+
