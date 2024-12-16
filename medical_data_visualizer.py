@@ -64,3 +64,7 @@ def draw_heat_map():
     return fig
 
 heat_map = draw_heat_map()
+
+# Display and save the figures
+categorical_plot.savefig("/home/kratoshi/DataThings/DS_Projects/charts/categorical_plot.png")
+heat_map.savefig("/home/kratoshi/DataThings/DS_Projects/charts/heat_map.png")
